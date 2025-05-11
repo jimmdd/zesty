@@ -1,0 +1,35 @@
+[package]
+name = "zesty"
+version = "0.1.0"
+description = "Solana pay loyalty program using zkcompression"
+license = "Apache-2.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "zesty"
+
+[features]
+no-entrypoint = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+custom-heap = []
+default = ["custom-heap", "idl-build"]
+test-sbf = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+
+[dependencies]
+# Anchor
+anchor-lang = { version = "=0.29.0", features = ["init-if-needed"] }
+anchor-spl = "=0.29.0"
+
+# Light protocols
+light-compressed-token = { version = "1.2.0", features = ["no-entrypoint"] }
+
+[dev-dependencies]
+light-client = "0.9.1"
+light-test-utils = "1.2.1"
+solana-program-test = "1.18.22"
+tokio = "1.36.0"
+anchor-spl = "0.29.0"

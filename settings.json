@@ -1,0 +1,7 @@
+{
+    "rust-analyzer.rustup.channel": "1.80.0",
+    "rust-analyzer.procMacro.enable": false,
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-proc-macro"
+    ]
+}
