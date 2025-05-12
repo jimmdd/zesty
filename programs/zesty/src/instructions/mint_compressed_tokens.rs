@@ -45,18 +45,6 @@ pub fn mint_compressed_tokens(
         ctx.accounts.mint_creator.key.as_ref(),
         &[ctx.bumps.mint_authority],
     ];
-    let expected_pda = Pubkey::create_program_address(
-        &[
-            b"mint_auth",
-            ctx.accounts.mint_creator.key.as_ref(),
-            &[ctx.bumps.mint_authority],
-        ],
-        &crate::ID,
-    )
-    .unwrap();
-
-    msg!("Expected PDA: {}", expected_pda);
-    msg!("Provided PDA: {}", ctx.accounts.mint_authority.key());
     // manual cpi call
     let mut data: Vec<u8> = vec![241, 34, 48, 186, 37, 179, 123, 192];
     data.extend(recipients.try_to_vec()?);
@@ -165,35 +153,3 @@ pub enum ZestyMintError {
     #[msg["Not enough balance in burner account"]]
     NotEnoughBalance,
 }
-
-// // finding the light accounts
-// let registered_program_pda =
-//     Pubkey::find_program_address(&[PROGRAM_ID_LIGHT_SYSTEM.as_ref()], &crate::ID).0;
-
-// let self_program_cpi_authority_pda = light_sdk::utils::get_cpi_authority_pda(&crate::ID);
-
-// let cpi_ctx = CpiContext::new_with_signer(
-//     ctx.accounts.compressed_token_program.to_account_info(),
-//     MintToInstruction {
-//         fee_payer: ctx.accounts.recipient.to_account_info(),
-//         authority: ctx.accounts.mint_authority.to_account_info(),
-//         mint: ctx.accounts.mint.to_account_info(),
-//         token_pool_pda: ctx.accounts.token_pool_pda.to_account_info(),
-//         token_program: ctx.accounts.token_program.to_account_info(),
-//         merkle_tree: ctx.accounts.state_tree.to_account_info(),
-//         system_program: ctx.accounts.system_program.to_account_info(),
-//         account_compression_authority: ctx.accounts.mint_authority.to_account_info(),
-//         // derived accounts
-//         cpi_authority_pda: ctx
-//             .accounts
-//             .compressed_token_cpi_authority_pda
-//             .to_account_info(),
-//         light_system_program: ctx.accounts.light_system_program.to_account_info(),
-//         registered_program_pda: ctx.accounts.registered_program_pda.to_account_info(),
-//         noop_program: ctx.accounts.noop_program.to_account_info(),
-//         account_compression_program: ctx.accounts.account_compression_program.to_account_info(),
-//         self_program: ctx.accounts.compressed_token_program.to_account_info(),
-//         sol_pool_pda: None,
-//     },
-//     signer,
-// );

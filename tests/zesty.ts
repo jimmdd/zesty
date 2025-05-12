@@ -28,6 +28,11 @@ describe("mint compressed token", () => {
    console.log("Recipient public key", tokenRecipient.publicKey.toBase58());
    const mint = Keypair.fromSecretKey(Uint8Array.from([202, 211, 31, 147, 122, 247, 234, 6, 79, 147, 27, 72, 49, 8, 137, 128, 250, 27, 51, 16, 187, 218, 50, 164, 183, 232, 34, 130, 139, 1, 116, 94, 75, 181, 213, 91, 43, 5, 77, 50, 214, 89, 19, 83, 114, 142, 143, 240, 253, 174, 22, 3, 157, 147, 40, 224, 177, 24, 171, 197, 197, 102, 244, 137]));
    console.log("Mint public key", mint.publicKey.toBase58());
+   const [cpiAuthorityPda2] = PublicKey.findProgramAddressSync(
+      [Buffer.from(CPI_AUTHORITY_SEED)],
+      CompressedTokenProgram.programId
+   );
+   console.log("cpi authority pda", cpiAuthorityPda2.toBase58());
    // Configure the client to use the local cluster.
    const provider = new anchor.AnchorProvider(
       new Connection("http://localhost:8899"),
