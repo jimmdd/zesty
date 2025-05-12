@@ -7548,10 +7548,12 @@ dependencies = [
 name = "zesty"
 version = "0.1.0"
 dependencies = [
+ "account-compression 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "anchor-lang",
  "anchor-spl",
  "light-client",
  "light-compressed-token 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "light-system-program 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "light-test-utils",
  "solana-program-test",
  "tokio",

@@ -25,7 +25,12 @@ anchor-lang = { version = "=0.29.0", features = ["init-if-needed"] }
 anchor-spl = "=0.29.0"
 
 # Light protocols
-light-compressed-token = { version = "1.2.0", features = ["no-entrypoint"] }
+light-compressed-token = { version = "1.2.0", features = [
+    "no-entrypoint",
+    "cpi",
+] }
+light-system-program = { version = "1.2.0", features = ["no-entrypoint"] }
+account-compression = { version = "1.2.0", features = ["no-entrypoint"] }
 
 [dev-dependencies]
 light-client = "0.9.1"
