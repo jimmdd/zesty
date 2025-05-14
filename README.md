@@ -119,4 +119,4 @@ Join our community and help shape the future of decentralized loyalty programs o
 
 ---
 
-Built with 💜 by Jimdd (Super Sloth)
+Built with 💜 by Jimmdd
