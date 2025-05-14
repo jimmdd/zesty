@@ -1,6 +1,7 @@
 # Solana Pay with zkCompression POP Loyalty Token Claim
-
+<div style="text-align: center;">
 <img src="logo.png" alt="Project Logo" width="300"/>
+</div>
 
 Welcome to the **Zesty* project! This open-source project leverages lightprotocol's zero-knowledge compression (zkCompression) to enable a seamless loyalty/experience token claim system integrated with Solana Pay. Our goal is to provide a scalable, cost-efficient, and user-friendly solution for businesses to reward customers with loyalty/experience tokens using the best and easiest solution on Solana.
 
@@ -8,6 +9,7 @@ Welcome to the **Zesty* project! This open-source project leverages lightprotoco
 
 This project implements a loyalty token claim system on Solana, utilizing **Solana Pay** for frictionless payments and **zkCompression** for optimized on-chain storage. The **POP (Proof of Participation)** loyalty token incentivizes user engagement, enabling businesses to reward customers efficiently. Built with the **Anchor** framework and zkcompresion. 
 
+<img src="zesty-diagram.png" alt="Project Logo" style="width:100%;"/>
 Zesty will allow mechant/user to create compressed mint and set rules to distrbute loyalty or experience token based on the payment amount. Example for solana pay usecase, user can use zesty to create normal solana pay QR code and user can scan the code for both payment and receive loyalty token all at once. This is great for any point of sale (POS) system or remotely anywhere with QR code.
 
 Whether you're a business looking to implement a loyalty program or a developer exploring Solana's capabilities, this project provides a solid foundation for building scalable applications on Solana.
